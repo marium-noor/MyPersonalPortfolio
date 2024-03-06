@@ -29,7 +29,7 @@ This is a personal portfolio website built using HTML, CSS, and JavaScript. It i
 
 ## Demo
 
-You can view a live demo of the website at [https://yourusername.github.io/yourportfolio](https://marium-noor.github.io/MyPersonalPortfolio)
+You can view a live demo of the website at [https://yourusername.github.io/yourportfolio](https://marium-noor.github.io/MyPersonalPortfolio/)
 
 ## Credits
 

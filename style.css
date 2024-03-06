@@ -46,24 +46,93 @@ body {
 
 /* NAVBAR */
 
+.hamburger {
+	position: relative;
+	display: block;
+	width: 35px;
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 5px;
+	background-color: #FFF;
+	margin: 6px 0px;
+	transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+	opacity: 0;
+}
+
+.mobile-nav {
+	position: fixed;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	min-height: 100vh;
+	display: block;
+	z-index: 98;
+	background-color: #000;
+	padding-top: 120px;
+	transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+	left: 0;
+}
+
+.mobile-nav a {
+	display: block;
+	width: 100%;
+	max-width: 200px;
+	margin: 0 auto 16px;
+	text-align: center;
+	padding: 12px 16px;
+	background-color: #2a2a2a;
+
+	color: #FFF;
+	text-decoration: none;
+}
+
+.mobile-nav a:hover {
+	background-color: #2a2a2a;
+}
+
+
+
 #nav {
-    height: 140px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 150px;
-    gap: 40px;
-    position: fixed;
-    z-index: 99;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 150px;
+  gap: 40px;
+  position: fixed;
+  z-index: 99;
 }
 
 #nav img {
-    height: 70px;
+  height: 70px;
 }
 #nav h4 {
-    text-transform: uppercase;
-    font-weight: 500;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 #nav h4 a {
   text-decoration: none;
@@ -81,6 +150,7 @@ body {
   color: #fff;
   transition: all 0.5s ease-in-out;
   margin-left: 2vw;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .btn-txt {
@@ -106,12 +176,8 @@ body {
 .button:hover {
   box-shadow: 1px 1px 200px #96C11E;
   color: #000;
+  background-color: #95C11E;
   border: none;
-}
-
-.type1:hover::after {
-  visibility: visible;
-  transform: scale(100) translateX(2px);
 }
 
 /* VIDEO */
@@ -265,14 +331,19 @@ video {
 }
 
 .box {
-  width: calc(33.33% - 20px);
+  width: 20%;
   margin: 20px;
   padding: 10px;
   text-align: center;
   background: transparent;
   border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .box p {
+  width: 90%;
   text-align: center;
   margin: 0 auto;
   line-height: 1;
@@ -283,16 +354,6 @@ video {
   margin-bottom: 10px;
 }
 
-.box-container {
-  margin: 5%;
-}
-
-.box {
-  padding: 20px;
-  margin: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 h3, h4 {
   margin: 0 0 10px;
@@ -517,48 +578,56 @@ p {
 }
 
 
+/* CONTACT SECTION */
 
 .contact {
-  background: transparent;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 2.5rem;
-  border-top: 2px solid rgba(149, 193, 30, 1);
   padding: 5%;
 }
 .contact-text h4 {
+  color: #fff;
   margin: 18px 0;
   font-size: 20px;
   font-weight: 600;
 }
 .contact-text h2 {
-  font-size: 25px;
+  font-size: 3rem;
   line-height: 1;
 }
 .contact text p {
-  font-size: 15px;
+  color: #202020;
+  font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 30px;
 }
+ul {
+  margin: 20px;
+}
 .list {
-  margin-bottom: 2.8rem;
+  margin: 0 2.8rem;
+
 }
 .list li {
   margin-bottom: 12px;
 }
 .list li a {
   display: block;
+  color: #fff;
   font-size: 14px;
   transition: all .45s ease;
 }
 .list li a:hover {
+  color: #95C11E;
   transform: translateY(5px);
 }
 
 .contact-icons i {
   height: 45px;
   width: 45px;
+  color: #fff;
   font-size: 22px;
   display: inline-block;
   align-items: center;
@@ -568,7 +637,9 @@ p {
   transition: all .45s ease;
 }
   
-
+.contact-icons i:hover {
+  color: #afd34d;
+}
   
 .contact-form form{
   position: relative;
@@ -577,6 +648,8 @@ p {
 .contact-form form input, form textarea {
   width: 100%;
   padding: 14px;
+  background: #2a2a2a;
+  color: #fff;
   border: none;
   outline: none;
   font-size: 15px;
@@ -590,7 +663,8 @@ p {
 .contact-form .submit {
   display: inline-block;
   font-size: 16px;
-  background: var(--main-color);
+  background: #95C11E;
+  color: #fff;
   width: 160px;
   transition: all .45s ease;
 }
@@ -608,17 +682,31 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  background: transparent;
+  background: #2a2a2a;
 }
 .last-text p {
-  color: #95C11E;
+  color: #ccc;
   font-size: 14px;
 }
 .top i {
   padding: 10px;
   border-radius: 8px;
   font-size: 15px;
+  color: #fff;
+  background: #95C11E;
 }
+
+.ham-burger {
+  height: 400px;
+  background-color: #000;
+  color: #95C11E;
+  display: none; /* Hide the hamburger menu by default */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
 
 
 
@@ -668,9 +756,13 @@ p {
 
 /* Large devices */
 @media only screen and (min-width: 1200px) and (max-width: 2000px) {
-  #nav .bars {
-    display: none;
-  }
+  .mobile-nav {
+		display: none;
+	}
+
+	.hamburger {
+		display: none;
+	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -678,9 +770,13 @@ p {
   #nav {
     padding: 0 50px;
   }
-  #nav .bars {
-    display: none;
-  }
+  .mobile-nav {
+		display: none;
+	}
+
+	.hamburger {
+		display: none;
+	}
   #nav h4 {
     font-size: 10px;
   }
@@ -703,7 +799,7 @@ p {
     padding: 10%;
   }
   #green-div .hi h4 {
-    width: 75%;
+    width: 100%;
     line-height: 1.5;
     font-size: 25px;
   }
@@ -713,12 +809,10 @@ p {
   #nav h4{
     display: none;
   }
-  #nav .bars {
-    font-size: 30px;
-    color: white;
-  }
   #nav img{
     margin: 0 10%;
+    width: 60px;
+    height: 70px;
   }
   
   #about-us {
@@ -738,17 +832,36 @@ p {
   }
 
   #green-div {
-    height: 45vh;
+    height: 25vh;
   }
   #green-div .hi {
     padding: 10%;
+    width: 100%;
   }
   #green-div .hi h4 {
-    width: 75%;
+    width: 130%;
     line-height: 1;
     font-size: 25px;
   }
+  .contact {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    padding: 2%;
+  }
+
+  .contact-form form input, form textarea {
+    width: 80%;
+    margin: 1% 5%;
+  }
+
+  .contact-text {
+    text-align: center;
+  }
+  .contact-text h2 {
+    font-size: 2rem;
+  }
 }
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) and (min-width: 100px){
@@ -763,11 +876,7 @@ p {
     padding: 0 20px; 
     gap: 20px;
    }
-
-  #nav .bars {
-    font-size: 20px;    
-  }
-  #nav h4{
+   #nav h4{
     display: none; 
   }
   #nav img{
@@ -841,7 +950,8 @@ p {
     font-size: 15px;
     text-align: center;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1;
+    width: 100%;
   }
 
   .pro-box {
@@ -861,7 +971,7 @@ p {
     width: 100%;
   }
   #green-div .hi h4 {
-    width: 75%;
+    width: 100%;
     line-height: 1;
     font-size: 15px;
   }
@@ -872,100 +982,120 @@ p {
   }
   #page3 h1 {
     font-size: 15px;
+    margin-bottom: 10%;
   }
 
-    #page3 .links {
-      flex-direction: row;
-      align-items: center;
-      gap: 20px;
-    }
+  #page3 .links {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
   
-    .light-button button.bt {
-      height: 100px;
-      width: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      border: none;
-      background: none;
-      outline: none;
-      cursor: pointer;
-    }
+  .light-button button.bt {
+    height: 100px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+  }
   
-    .light-button button.bt .button-holder {
-      height: 50px;
-      width: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #0a0a0a;
-      border-radius: 5px;
-      color: #0f0f0f;
-      font-weight: 700;
-      transition: 300ms;
-      outline: #0f0f0f 2px solid;
-      outline-offset: 20;
-    }
+  .light-button button.bt .button-holder {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+    border-radius: 5px;
+    color: #0f0f0f;
+    font-weight: 700;
+    transition: 300ms;
+    outline: #0f0f0f 2px solid;
+    outline-offset: 20;
+  }
   
-    .light-button button.bt .button-holder svg {
-      height: 30px;
-      fill: #0f0f0f;
-      transition: 300ms;
-    }
+  .light-button button.bt .button-holder svg {
+    height: 40px;
+    fill: #0f0f0f;
+    transition: 300ms;
+  }
   
-    .light-button button.bt .light-holder {
-      position: absolute;
-      height: 100px;
-      width: 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  .light-button button.bt .light-holder {
+    position: absolute;
+    height: 150px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
-    .light-button button.bt .light-holder .dot {
-      position: absolute;
-      font-size: 2px;
-      top: 0;
-      width: 10px;
-      height: 10px;
-      background-color: #000;
-      border-radius: 10px;
-      z-index: 2;
-    }
+  .light-button button.bt .light-holder .dot {
+    position: absolute;
+    font-size: 2px;
+    top: 0;
+    width: 7px;
+    height: 7px;
+    background-color: #95C11E;
+    border-radius: 10px;
+    z-index: 2;
+  }
   
-    .light-button button.bt .light-holder .light {
-      position: absolute;
-      top: 0;
-      width: 100px;
-      height: 80px;
-      clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
-      background: transparent;
-    }
+  .light-button button.bt .light-holder .light {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 80px;
+    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+    background: transparent;
+  }
   
-    .light-button button.bt:hover .button-holder svg {
-      fill: #95C11E;
-    }
+  .light-button button.bt:hover .button-holder svg {
+    fill: #95C11E;
+  }
   
-    .light-button button.bt:hover .button-holder {
-      color: #95C11E;
-      outline: rgb(149, 193, 30) 2px solid;
-      outline-offset: 2px;
-    }
+  .light-button button.bt:hover .button-holder {
+    color: #95C11E;
+    outline: rgb(149, 193, 30) 2px solid;
+    outline-offset: 2px;
+  }
   
-    .light-button button.bt:hover .light-holder .light {
-      background: rgb(255, 255, 255);
-      background: linear-gradient(
-        180deg,
-        rgba(149, 193, 30, 1) 0%,
-        rgba(255, 255, 255, 0) 75%,
-        rgba(255, 255, 255, 0) 100%
-      );
-    }
+  .light-button button.bt:hover .light-holder .light {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(149, 193, 30, 1) 0%,
+      rgba(255, 255, 255, 0) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
   
-    .light-button .button-holder p {
-      font-size: 7px;
-    }
+  .light-button .button-holder p {
+    font-size: 8px;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2%;
+  }
+
+  .contact-form form input, form textarea {
+    width: 80%;
+    margin: 1% 5%;
+  }
+
+  .contact-text {
+    text-align: center;
+  }
+  .contact-text h2 {
+    font-size: 2rem;
+  }
+
 }
 

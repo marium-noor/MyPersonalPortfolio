@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Portfolio</title>
     <!-- font-awesome -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- styles -->
@@ -15,25 +16,33 @@
     <div id="cursor"></div>
 
     <!-- Navbar -->
-    
+
     <div id="nav">
-      <div class="bars">
-        <i class="fa-solid fa-bars"></i>
-      </div>
 
-      <img src="images/dev-removebg-preview.png">
-
+      <button class="hamburger">
+				<div class="bar"></div>
+			</button> 
+      
+      <img src="images/girl-dev.svg">
+    
       <h4><a href="#page1">Home</a></h4>
       <h4><a href="#about-us">About me</a></h4>
       <h4><a href="#skills">My skills</a></h4>
       <h4><a href="#projects">My Projects</a></h4>
-      <h4>Contact me</h4>
-
+      <h4><a href="#contact">Contact me</a></h4>
+    
       <button class="button type1">
-        <span class="btn-txt">My resume</span>
+        <span class="btn-txt"><a href="MariumNoorResume.pdf" target="_blank">My resume</a></span>
       </button>
     </div>
-
+    
+    <nav class="mobile-nav">
+      <h4><a href="#page1">Home</a></h4>
+      <h4><a href="#about-us">About me</a></h4>
+      <h4><a href="#skills">My skills</a></h4>
+      <h4><a href="#projects">My Projects</a></h4>
+      <h4><a href="#contact">Contact me</a></h4>
+    </nav>
   <!-- Video -->
 
     <video
@@ -44,9 +53,11 @@
     ></video>
 
   <!-- Main content -->
-
   
     <div id="main">
+
+      <!-- HOME SECTION -->
+
       <div id="page1">
         <h1>MARIUM.. FRONT-END.</h1>
         <h2>Welcome to my portfolio!!</h2>
@@ -56,8 +67,11 @@
         <button class="button"><a href="https://linkedin.com/in/mariumnoor29" target="_blank">Hire Me!!</a></button>
       </div>
 
+      <!-- ALL SECTION -->
+
       <div id="page2">
 
+        <!-- SCROLLER SECTION -->
         <div id="scroller">
               <div id="scroller-in">
                 <h4>FRONT-END DEVELOPMEN</h4>
@@ -75,6 +89,7 @@
               </div>
         </div>
 
+        <!-- ABOUT-US SECTION -->
         <div id="about-us">
           <div id="about-us-in">
             <h3>:) ABOUT ME</h3>
@@ -85,6 +100,7 @@
           <img src="images/undraw_proud_coder_re_exuy.svg" alt="coder-illustration">
         </div>
 
+        <!-- SKILLS SECTION -->
         <div id="skills">
           <h1>My main tech stack includes</h1>
           <div class="tech">
@@ -121,6 +137,7 @@
           </div>
         </div>
 
+        <!-- PROJECTS SECTION -->
         <div id="projects">
           <h1>Checkout few of my projects</h1>
 
@@ -149,17 +166,19 @@
 
           <div class="pro-box">
             <div class="text">
-              <h2>BUBBLE GAME</h2>
+              <h2>FilmLane-Movie site</h2>
               <p>
-                Experience the thrill of the Bubble Hit game, where your goal is to pop the bubbles with the displayed numbers. This addictive web app, created using HTML, CSS, and JavaScript, challenges your speed and accuracy as you aim to hit the bubbles matching the target number. Test your reflexes and enjoy the fun gameplay!
+                MovieSite is a user-friendly web application that allows users to explore a vast collection of movies, providing detailed information and an enjoyable browsing experience. With its responsive design, users can easily access and discover new movies on both desktop and mobile devices.
               </p>
-              <a href="https://github.com/marium-noor/Bubble-game" target="_blank">Code</a>
+              <a href="https://github.com/marium-noor/Flimlane-Movie-site" target="_blank">Code</a>
+              <div><a href="https://marium-noor.github.io/Flimlane-Movie-site/" target="_blank">Live Demo</a></div>
             </div>
-            <img src="images/Screenshot 2024-03-04 212341.png">
+            <img src="images/Screenshot 2024-03-07 015517.png">
           </div>
 
         </div>
 
+        <!-- EXTRA SECTION -->
         <div id="green-div">
           <img src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt=""/>
           <div class="hi">
@@ -178,15 +197,18 @@
 
       </div>
 
+      <!-- LINKS SECTION -->
+
       <div id="page3">
         <h1>TRYNA FIND ME HERE!!</h1>
         <div class="links">
 
           <div class="light-button">
-            <button class="bt">
+            <a href="https://github.com/marium-noor" target="_blank">
+              <button class="bt">
               <div class="light-holder">
-                <div class="dot"></div>
-                <div class="light"></div>
+                  <div class="dot"></div>
+                  <div class="light"></div>
               </div>
               <div class="button-holder">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -194,43 +216,49 @@
                 </svg>
                 <p>Github</p>
               </div>
-            </button>
+              </button>
+            </a>
           </div>
 
           <div class="light-button">
-            <button class="bt">
-              <div class="light-holder">
-                <div class="dot"></div>
-                <div class="light"></div>
-              </div>
-              <div class="button-holder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-                <p>LinkedIn</p>
-              </div>
-            </button>
+            <a href="https://linkedin.com/in/mariumnoor29" target="_blank">
+              <button class="bt">
+                <div class="light-holder">
+                  <div class="dot"></div>
+                  <div class="light"></div>
+                </div>
+                <div class="button-holder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+                  <p>LinkedIn</p>
+                </div>
+              </button>
+            </a>
           </div>
 
           <div class="light-button">
-            <button class="bt">
-              <div class="light-holder">
-                <div class="dot"></div>
-                <div class="light"></div>
-              </div>
-              <div class="button-holder">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                </svg>
-                <p>Instagram</p>
-              </div>
-            </button>
+            <a href="https://instagram.com/maryamm.codes" target="_blank">
+              <button class="bt">
+                <div class="light-holder">
+                  <div class="dot"></div>
+                  <div class="light"></div>
+                </div>
+                <div class="button-holder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                  </svg>
+                  <p>Instagram</p>
+                </div>
+              </button>
+            </a>
           </div>
           
         </div>
       </div>
 
-      
-    <div class="contact" id="contact">
+      <!-- CONTACT SECTION -->
+
+      <section class="contact" id="contact">
       <div class="contact-text">
           <h2>Contact <span>Me!</span></h2>
           <h4>If you have any project in your mind.</h4>
@@ -238,8 +266,8 @@
           <div class="list">
               <ul>
                   <li><a href="#">+92-3121819599</a></li>
-                  <li><a href="#">imarium@gmail.com</a></li>
-                  <li><a href="#">Like Share & Subscribe</a></li>
+                  <li><a href="mailto:imariumnoor@gmail.com">imarium@gmail.com</a></li>
+                  <li><a href="#">Like and share, if you like tho!</a></li>
               </ul>
           </div>
 
@@ -259,22 +287,20 @@
               <input type="submit" value="Send Message" class="submit" required>
           </form>
       </div>
-    </div>
+      </section>
 
-  <!--END SECTION -->
+      <!--END SECTION -->
 
-  <div class="end">
+      <section class="end">
       <div class="last-text">
-          <p>Completely developed by me!!</p>
+          <p>Design Inspired</p>
       </div>
       <div class="top">
-          <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
+          <a href="#page1">↑</a>
       </div>
+      </section>
+
     </div>
-
-
-    </div>
-
 
 
     <!-- javascript -->
@@ -284,25 +310,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
